@@ -1,0 +1,623 @@
+<html><head><base href="https://gamedev-portfolio.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Game Development Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+  :root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #00cec9;
+    --bg-color: #2d3436;
+    --text-color: #dfe6e9;
+    --card-bg: #34495e;
+    --hover-color: #74b9ff;
+    --github-color: #333;
+    --play-color: #27ae60;
+    --youtube-color: #ff0000;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 3rem 0;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .company-section {
+    margin: 4rem 0;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .company-section:hover {
+    transform: translateY(-5px);
+  }
+  
+  .company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 1rem;
+  }
+  
+  .company-name {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .company-period {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+  }
+  
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .game-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+  
+  .game-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .game-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .game-card:hover .game-image {
+    transform: scale(1.1);
+  }
+  
+  .game-info {
+    padding: 1.5rem;
+  }
+  
+  .game-title {
+    font-size: 1.8rem;
+    margin: 0 0 1rem;
+    color: var(--hover-color);
+    font-weight: 600;
+  }
+  
+  .game-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .timeline {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .technologies {
+    margin-top: 1rem;
+  }
+  
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .tech-tag {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  
+  .tech-tag:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+  
+  .about-me {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 4rem 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  .about-me h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-me p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  footer {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--hover-color);
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: var(--hover-color);
+  }
+  
+  .game-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  .game-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .game-link i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .github-link {
+    background-color: var(--github-color);
+  }
+  
+  .play-link {
+    background-color: var(--play-color);
+  }
+  
+  .youtube-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--youtube-color);
+    color: var(--text-color);
+    width: 10px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .youtube-link i {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .game-link:hover, .youtube-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  }
+  
+  .github-link:hover {
+    background-color: #24292e;
+  }
+  
+  .play-link:hover {
+    background-color: #2ecc71;
+  }
+  
+  .youtube-link:hover {
+    background-color: #cc0000;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: var(--card-bg);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .game-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .company-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .company-period {
+      margin-top: 0.5rem;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .game-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .game-link {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      width: 95%;
+      margin: 5% auto;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>My Game Development Journey</h1>
+  </header>
+  
+  <div class="container">
+    
+    <div class="company-section">
+      <div class="company-header">
+        <h2 class="company-name">Panda Play</h2>
+        <span class="company-period">Jul 2021 - Oct 2023</span>
+      </div>
+      <div class="game-list">
+        <div class="game-card" data-youtube-id="dQw4w9WgXcQ">
+          <div class="game-image-container">
+            <img src="cosmic-quest.jpg" alt="Cosmic Quest: A vibrant space exploration game with colorful planets and spaceships" class="game-image" width="300" height="200">
+            <a href="#" class="game-link youtube-link" aria-label="Watch game video"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">Cosmic Quest</h3>
+            <p class="game-description">An epic space exploration adventure where players discover new planets, trade resources, and build their own galactic empire.</p>
+            <p class="timeline">Development period: 2019 - 2021</p>
+            <div class="technologies">
+              <div class="tech-list">
+                <span class="tech-tag">Unreal Engine 4</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Blueprints</span>
+                <span class="tech-tag">Photon</span>
+                <span class="tech-tag">FMOD</span>
+              </div>
+            </div>
+            <div class="game-links">
+              <a href="https://github.com/GalacticGames/CosmicQuest" class="game-link github-link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+              <a href="https://galacticgames.com/play/cosmic-quest" class="game-link play-link" target="_blank"><i class="fas fa-play"></i>Play</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="game-card" data-youtube-id="dQw4w9WgXcQ">
+          <div class="game-image-container">
+            <img src="alien-defense.jpg" alt="Alien Defense: A strategic tower defense game with futuristic alien invaders" class="game-image" width="300" height="200">
+            <a href="#" class="game-link youtube-link" aria-label="Watch game video"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">Alien Defense</h3>
+            <p class="game-description">A tower defense game where players protect Earth from waves of alien invaders using advanced technology and strategic planning.</p>
+            <p class="timeline">Development period: 2017 - 2019</p>
+            <div class="technologies">
+              <div class="tech-list">
+                <span class="tech-tag">Unity 3D</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Unity UI</span>
+                <span class="tech-tag">Playfab</span>
+                <span class="tech-tag">Blender</span>
+              </div>
+            </div>
+            <div class="game-links">
+              <a href="https://github.com/GalacticGames/AlienDefense" class="game-link github-link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+              <a href="https://galacticgames.com/play/alien-defense" class="game-link play-link" target="_blank"><i class="fas fa-play"></i>Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-section">
+      <div class="company-header">
+        <h2 class="company-name">Butcher's Games</h2>
+        <span class="company-period">Jun 2024 - Aug 2024</span>
+      </div>
+      <div class="game-list">
+        <div class="game-card" data-youtube-id="dQw4w9WgXcQ">
+          <div class="game-image-container">
+            <img src="pixel-dungeon.jpg" alt="Pixel Dungeon: A retro-style dungeon crawler with pixelated graphics" class="game-image" width="300" height="200">
+            <a href="#" class="game-link youtube-link" aria-label="Watch game video"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">Pixel Dungeon</h3>
+            <p class="game-description">A challenging roguelike dungeon crawler featuring procedurally generated levels and a unique pixel art style.</p>
+            <p class="timeline">Development period: 2015 - 2017</p>
+            <div class="technologies">
+              <div class="tech-list">
+                <span class="tech-tag">GameMaker Studio</span>
+                <span class="tech-tag">GML</span>
+                <span class="tech-tag">Aseprite</span>
+                <span class="tech-tag">Git</span>
+              </div>
+            </div>
+            <div class="game-links">
+              <a href="https://github.com/RetroPixel/PixelDungeon" class="game-link github-link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+              <a href="https://retropixel.itch.io/pixel-dungeon" class="game-link play-link" target="_blank"><i class="fas fa-play"></i>Play</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="game-card" data-youtube-id="dQw4w9WgXcQ">
+          <div class="game-image-container">
+            <img src="8bit-racer.jpg" alt="8-Bit Racer: A retro-styled racing game with colorful blocky graphics" class="game-image" width="300" height="200">
+            <a href="#" class="game-link youtube-link" aria-label="Watch game video"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">8-Bit Racer</h3>
+            <p class="game-description">An adrenaline-pumping racing game that combines old-school graphics with modern gameplay mechanics.</p>
+            <p class="timeline">Development period: 2014 - 2015</p>
+            <div class="technologies">
+              <div class="tech-list">
+                <span class="tech-tag">Phaser.js</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">WebGL</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+            </div>
+            <div class="game-links">
+              <a href="https://github.com/RetroPixel/8BitRacer" class="game-link github-link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+              <a href="https://retropixel.com/games/8bit-racer" class="game-link play-link" target="_blank"><i class="fas fa-play"></i>Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-section">
+      <div class="company-header">
+        <h2 class="company-name">My Pet Projects</h2>
+        <span class="company-period">Always</span>
+      </div>
+      <div class="game-list">
+        <div class="game-card" data-youtube-id="dQw4w9WgXcQ">
+          <div class="game-image-container">
+            <img src="eco-tycoon.jpg" alt="Eco Tycoon: A nature-themed management game with lush forests and wildlife" class="game-image" width="300" height="200">
+            <a href="#" class="game-link youtube-link" aria-label="Watch game video"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">Eco Tycoon</h3>
+            <p class="game-description">Build and manage your own sustainable city while balancing economic growth with environmental protection.</p>
+            <p class="timeline">Development period: 2012 - 2014</p>
+            <div class="technologies">
+              <div class="tech-list">
+                <span class="tech-tag">Unity 3D</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">Maya</span>
+                <span class="tech-tag">Substance Painter</span>
+              </div>
+            </div>
+            <div class="game-links">
+              <a href="https://github.com/EcoTechGames/EcoTycoon" class="game-link github-link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+              <a href="https://ecotechgames.com/eco-tycoon" class="game-link play-link" target="_blank"><i class="fas fa-play"></i>Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="video-container">
+        <iframe width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <!-- <a href="https://gamedev-portfolio.com/about">About</a> -->
+          <!-- <a href="https://gamedev-portfolio.com/projects">Projects</a> -->
+          <!-- <a href="https://gamedev-portfolio.com/blog">Blog</a> -->
+          <!-- <a href="https://gamedev-portfolio.com/contact">Contact</a> -->
+        </div>
+        <div class="social-icons">
+          <a href="https://t.me/nthropos" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.linkedin.com/in/dmitry-sudarev-b21614225/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Chimerical-dream" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const modal = document.getElementById("videoModal");
+    const modalIframe = modal.querySelector("iframe");
+    const closeBtn = modal.querySelector(".close");
+
+    document.querySelectorAll('.youtube-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const youtubeId = e.target.closest('.game-card').dataset.youtubeId;
+        modalIframe.src = `https://www.youtube.com/embed/${youtubeId}`;
+        modal.style.display = "block";
+      });
+    });
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+      modalIframe.src = "";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modalIframe.src = "";
+      }
+    }
+
+    document.querySelectorAll('.game-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('.game-links') && !e.target.closest('.youtube-link')) {
+          const gameTitle = card.querySelector('.game-title').textContent;
+          const gameDescription = card.querySelector('.game-description').textContent;
+          const timeline = card.querySelector('.timeline').textContent;
+          const technologies = Array.from(card.querySelectorAll('.tech-tag')).map(tag => tag.textContent).join(', ');
+          const company = card.closest('.company-section').querySelector('.company-name').textContent;
+          const companyPeriod = card.closest('.company-section').querySelector('.company-period').textContent;
+          const githubLink = card.querySelector('.game-links a:nth-child(1)').href;
+          const playLink = card.querySelector('.game-links a:nth-child(2)').href;
+          
+          alert(`${gameTitle}\n\n${gameDescription}\n\n${timeline}\n\nTechnologies: ${technologies}\n\nCompany: ${company}\nPeriod: ${companyPeriod}\n\nGitHub: ${githubLink}\nPlay: ${playLink}`);
+        }
+      });
+    });
+  </script>
+</body></html>
