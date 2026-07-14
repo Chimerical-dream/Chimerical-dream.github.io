@@ -82,19 +82,9 @@
             image.loading = 'lazy';
             imageContainer.append(image);
 
-            if (game.YoutubeLink) {
-                const youtubeLink = createElement('button', 'youtube-link');
-                youtubeLink.type = 'button';
-                youtubeLink.setAttribute('aria-label', `Watch ${game.Title} video`);
-                youtubeLink.dataset.youtubeId = getYoutubeId(game.YoutubeLink);
-                youtubeLink.innerHTML = '<i class="fab fa-youtube"></i>';
-                imageContainer.append(youtubeLink);
-            }
-
             const info = createElement('div', 'game-info');
             info.append(createElement('h3', 'game-title', game.Title));
             info.append(createElement('p', 'game-description', game.Description));
-            info.append(createElement('p', 'timeline', game.TimePeriod));
 
             const visibleGameSkills = game.Skills.filter(skill => skill !== 'Unity 3D' && skill !== 'C#');
             if (visibleGameSkills.length) {
@@ -105,11 +95,21 @@
                 info.append(technologies);
             }
 
+            info.append(createElement('p', 'timeline', game.TimePeriod));
+
             const links = createElement('div', 'game-links');
+            if (game.YoutubeLink) {
+                const youtubeLink = createElement('button', 'game-link youtube-link');
+                youtubeLink.type = 'button';
+                youtubeLink.setAttribute('aria-label', `Watch ${game.Title} video`);
+                youtubeLink.dataset.youtubeId = getYoutubeId(game.YoutubeLink);
+                youtubeLink.innerHTML = '<i class="fab fa-youtube"></i>';
+                links.append(youtubeLink);
+            }
             if (game.PlayLink) links.append(createLink(game.PlayLink, 'play-link', 'fas fa-play', 'Play'));
             if (game.AppMagicLink) links.append(createLink(game.AppMagicLink, 'appmagic-link', 'fas fa-chart-line', 'AppMagic'));
             if (game.RepositoryLink) links.append(createLink(game.RepositoryLink, 'github-link', 'fab fa-github', 'GitHub'));
-            if (links.childElementCount) info.append(links);
+            info.append(links);
 
             card.append(imageContainer, info);
             return card;

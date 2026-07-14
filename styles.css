@@ -112,6 +112,8 @@ h1 {
     border: 1px solid var(--border-color);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-card:hover {
@@ -139,6 +141,9 @@ h1 {
 
 .game-info {
     padding: 1.5rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
 .game-title {
@@ -157,11 +162,16 @@ h1 {
 .timeline {
     font-size: 0.9rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-top: auto;
+    margin-bottom: 0.5rem;
 }
 
 .technologies {
-    margin-top: 1rem;
+    margin-top: auto;
+}
+
+.technologies + .timeline {
+    margin-top: 0.5rem;
 }
 
 .tech-list {
@@ -257,7 +267,8 @@ footer {
 .game-links {
     display: flex;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
+    min-height: 40px;
 }
 
 .game-link {
@@ -293,25 +304,18 @@ footer {
 .youtube-link {
     border: 0;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: var(--youtube-color);
     color: var(--text-color);
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    display: flex;
+    padding: 0;
     justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    z-index: 10;
-    text-decoration: none;
+    border-radius: 50%;
 }
 
 .youtube-link i {
-    font-size: 1.2rem;
     margin: 0;
+    font-size: 1.2rem;
 }
 
 .game-link:hover,
