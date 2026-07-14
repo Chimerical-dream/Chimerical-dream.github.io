@@ -1,18 +1,23 @@
 :root {
-    --primary-color: #6c5ce7;
-    --secondary-color: #00cec9;
-    --bg-color: #2d3436;
-    --text-color: #dfe6e9;
-    --card-bg: #34495e;
-    --hover-color: #74b9ff;
-    --github-color: #333;
-    --play-color: #27ae60;
-    --youtube-color: #ff0000;
+    --bg-color: #080d1a;
+    --surface-color: #10182a;
+    --card-bg: #16213a;
+    --card-bg-hover: #1b2947;
+    --border-color: #263758;
+    --text-color: #e7edf9;
+    --muted-text-color: #a8b6cd;
+    --primary-color: #9db5ff;
+    --secondary-color: #5eead4;
+    --hover-color: #c1d0ff;
+    --github-color: #27354e;
+    --play-color: #167e70;
+    --appmagic-color: #3d4f91;
+    --youtube-color: #d95964;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
+    background: radial-gradient(circle at top, #152442 0, var(--bg-color) 42rem);
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -20,10 +25,11 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(120deg, #18294b 0%, #14233f 52%, #102b3c 100%);
     padding: 3rem 0;
     text-align: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-bottom: 1px solid rgba(94, 234, 212, 0.2);
 }
 
 h1 {
@@ -31,7 +37,8 @@ h1 {
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #f4f7ff;
+    text-shadow: 0 4px 24px rgba(4, 10, 25, 0.55);
 }
 
 .container {
@@ -43,22 +50,25 @@ h1 {
 .general-skills-section {
     margin: 4rem 0;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(16, 24, 42, 0.82);
+    border: 1px solid var(--border-color);
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 .company-section {
     margin: 4rem 0;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(16, 24, 42, 0.82);
+    border: 1px solid var(--border-color);
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .company-section:hover {
     transform: translateY(-5px);
+    border-color: #3b527c;
 }
 
 .company-header {
@@ -67,7 +77,7 @@ h1 {
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 2rem;
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 1px solid rgba(94, 234, 212, 0.45);
     padding-bottom: 1rem;
 }
 
@@ -99,13 +109,16 @@ h1 {
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
 .game-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background-color: var(--card-bg-hover);
+    border-color: #455f90;
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.32);
 }
 
 .game-image-container {
@@ -131,14 +144,14 @@ h1 {
 .game-title {
     font-size: 1.8rem;
     margin: 0 0 1rem;
-    color: var(--hover-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 .game-description {
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--muted-text-color);
 }
 
 .timeline {
@@ -159,8 +172,9 @@ h1 {
 }
 
 .tech-tag {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: rgba(157, 181, 255, 0.12);
+    border: 1px solid rgba(157, 181, 255, 0.26);
+    color: #cad7ff;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -168,7 +182,9 @@ h1 {
 }
 
 .tech-tag:hover {
-    background-color: var(--hover-color);
+    background-color: rgba(94, 234, 212, 0.16);
+    border-color: rgba(94, 234, 212, 0.5);
+    color: #d7fff8;
     transform: translateY(-2px);
 }
 
@@ -177,7 +193,8 @@ h1 {
     border-radius: 15px;
     padding: 2rem;
     margin: 4rem 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .about-me h2 {
@@ -192,10 +209,11 @@ h1 {
 }
 
 footer {
-    background-color: var(--card-bg);
+    background-color: var(--surface-color);
     color: var(--text-color);
     padding: 2rem 0;
     margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -218,7 +236,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--hover-color);
+    color: var(--secondary-color);
 }
 
 .social-icons {
@@ -233,7 +251,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: var(--hover-color);
+    color: var(--secondary-color);
 }
 
 .game-links {
@@ -268,6 +286,10 @@ footer {
     background-color: var(--play-color);
 }
 
+.appmagic-link {
+    background-color: var(--appmagic-color);
+}
+
 .youtube-link {
     border: 0;
     cursor: pointer;
@@ -299,15 +321,19 @@ footer {
 }
 
 .github-link:hover {
-    background-color: #24292e;
+    background-color: #344766;
 }
 
 .play-link:hover {
-    background-color: #2ecc71;
+    background-color: #1a9786;
+}
+
+.appmagic-link:hover {
+    background-color: #4d63ae;
 }
 
 .youtube-link:hover {
-    background-color: #cc0000;
+    background-color: #eb6872;
 }
 
 .modal {
@@ -330,11 +356,12 @@ footer {
     border-radius: 15px;
     width: 80%;
     max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.42);
 }
 
 .close {
-    color: #aaa;
+    color: var(--muted-text-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
