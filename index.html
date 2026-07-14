@@ -11,7 +11,7 @@
 <body>
     <header>
         <h1>My Game Development Journey</h1>
-        <p style="font-size: 0.8rem; color: var(--text-color); margin-top: .5rem;">PROJECTS THAT I'M PROUD OF</p>
+        <p style="font-size: 0.8rem; color: var(--text-color); margin-top: .5rem;">(PUBLICLY RELEASED) PROJECTS THAT I'M PROUD OF</p>
     </header>
 
     <main id="portfolio" class="container"></main>
@@ -96,11 +96,14 @@
             info.append(createElement('p', 'game-description', game.Description));
             info.append(createElement('p', 'timeline', game.TimePeriod));
 
-            const techList = createElement('div', 'tech-list');
-            game.Skills.forEach(skill => techList.append(createElement('span', 'tech-tag', skill)));
-            const technologies = createElement('div', 'technologies');
-            technologies.append(techList);
-            info.append(technologies);
+            const visibleGameSkills = game.Skills.filter(skill => skill !== 'Unity 3D' && skill !== 'C#');
+            if (visibleGameSkills.length) {
+                const techList = createElement('div', 'tech-list');
+                visibleGameSkills.forEach(skill => techList.append(createElement('span', 'tech-tag', skill)));
+                const technologies = createElement('div', 'technologies');
+                technologies.append(techList);
+                info.append(technologies);
+            }
 
             const links = createElement('div', 'game-links');
             if (game.PlayLink) links.append(createLink(game.PlayLink, 'play-link', 'fas fa-play', 'Play'));
@@ -110,6 +113,14 @@
 
             card.append(imageContainer, info);
             return card;
+        }
+
+        if (portfolioData.Skills.length) {
+            const skillsSection = createElement('section', 'general-skills-section');
+            const skillsList = createElement('div', 'tech-list');
+            portfolioData.Skills.forEach(skill => skillsList.append(createElement('span', 'tech-tag', skill)));
+            skillsSection.append(skillsList);
+            portfolio.append(skillsSection);
         }
 
         portfolioData.Companies.forEach(company => {

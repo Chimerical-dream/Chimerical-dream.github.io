@@ -1,24 +1,33 @@
 const portfolioData = {
+    Skills: [
+        'Unity 3D', 'Unity 2D', 'Unity for Web', 'Desktop', 'Android', 'IOS', 
+        'C#', 'Software Design Patterns', 'Software Architecture', 
+        'Profilling', 'LOD', 'Batching',
+        'UniTask', 'VContainer', 'DoTween', 'Custom Editor Tools',
+        'Physics', 'Procedural Generation', 'NavMesh', 'Enemy AI', 'Cinemachine',
+        'URP', 'Lighting', 'Mesh Generation', 'Shaders',
+        'Blender', 'Mixamo', 'Asset Ripper',
+    ],
     Companies: [
         {
-            Title: 'Severex', TimePeriod: 'Sep 2024 - Today', Skills: ['Unity 2D', 'Web requests'],
+            Title: 'Severex', TimePeriod: 'Sep 2024 - Today', Skills: ['Unity 2D', 'Android', 'IOS'],
             Games: [
-                { Title: 'Arrows Unjam', Description: 'FX heavy 2d puzzle with fine-tuned movement and ASMR feel', TimePeriod: 'June 2026', Skills: ['Unity 3D'], ImageSrc: '/imgs/arrows-unjam.webp', YoutubeLink: '', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.arrows.unjam.out.puzzle', AppMagicLink: 'https://appmagic.rocks/google-play/arrows-unjam-color-sort-puzzle/com.severex.arrows.unjam.out.puzzle', RepositoryLink: '' },
-                { Title: 'Mixsaw', Description: 'Jigsaw-like with unique controls', TimePeriod: 'April 2026', Skills: ['Unity 3D'], ImageSrc: '/imgs/mixsaw.webp', YoutubeLink: 'https://youtu.be/rAo9zJMtePE', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.jigsaw.picture.slide.solitaire.puzzle', AppMagicLink: 'https://appmagic.rocks/google-play/mixsaw-sliding-jigsaw-puzzle/com.severex.jigsaw.picture.slide.solitaire.puzzle', RepositoryLink: '' },
-                { Title: 'Word Vie', Description: 'Fake PvP association + tic tac toe. Featuring matchmaking, advanced bots and smart shuffling', TimePeriod: 'January 2026', Skills: ['Unity 3D'], ImageSrc: '/imgs/', YoutubeLink: 'https://youtu.be/KMSxy7m5vtQ', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.word.connections.association.puzzle.connect', AppMagicLink: 'https://appmagic.rocks/google-play/word-vie-match-associations/com.severex.word.connections.association.puzzle.connect', RepositoryLink: '' },
-                { Title: 'Cryptogram', Description: 'Word puzzle', TimePeriod: 'September 2025', Skills: ['Unity 3D'], ImageSrc: '/imgs/cryptogram.webp', YoutubeLink: 'https://youtu.be/sWP0GlWjyek', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.cryptogram.cross.word.puzzle.code', AppMagicLink: 'https://appmagic.rocks/google-play/cryptogram-code-word-puzzle/com.severex.cryptogram.cross.word.puzzle.code', RepositoryLink: '' },
-                { Title: 'Dixie Poker', Description: 'Poker + solitaire combination. Features a customization system, allowing to change the appearance of the game in one click', TimePeriod: 'January 2025', Skills: ['Unity 3D'], ImageSrc: '/imgs/dixie-poker.jpg', YoutubeLink: 'https://youtu.be/0UGaoi8QMN0', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.poker.solitaire.classic.cards', AppMagicLink: 'https://appmagic.rocks/google-play/dixie-poker-solitaire-puzzle/com.severex.poker.solitaire.classic.cards', RepositoryLink: '' }
+                { Title: 'Arrows Unjam', Description: 'FX heavy 2d puzzle with fine-tuned movement and ASMR feel', TimePeriod: 'June 2026', Skills: [], ImageSrc: '/imgs/arrows-unjam.webp', YoutubeLink: 'https://www.youtube.com/watch?v=EZhJ2y-HqeQ', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.arrows.unjam.out.puzzle', AppMagicLink: 'https://appmagic.rocks/google-play/arrows-unjam-color-sort-puzzle/com.severex.arrows.unjam.out.puzzle', RepositoryLink: '' },
+                { Title: 'Mixsaw', Description: 'Jigsaw-like with unique controls', TimePeriod: 'April 2026', Skills: [], ImageSrc: '/imgs/mixsaw.webp', YoutubeLink: 'https://youtu.be/rAo9zJMtePE', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.jigsaw.picture.slide.solitaire.puzzle', AppMagicLink: 'https://appmagic.rocks/google-play/mixsaw-sliding-jigsaw-puzzle/com.severex.jigsaw.picture.slide.solitaire.puzzle', RepositoryLink: '' },
+                { Title: 'Word Vie', Description: 'Fake PvP, association + tic tac toe. Featuring matchmaking, advanced bots and smart shuffling', TimePeriod: 'January 2026', Skills: [], ImageSrc: '/imgs/wordvie.jpg', YoutubeLink: 'https://youtu.be/KMSxy7m5vtQ', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.word.connections.association.puzzle.connect', AppMagicLink: 'https://appmagic.rocks/google-play/word-vie-match-associations/com.severex.word.connections.association.puzzle.connect', RepositoryLink: '' },
+                { Title: 'Cryptogram', Description: 'Word puzzle', TimePeriod: 'September 2025', Skills: [], ImageSrc: '/imgs/cryptogram.webp', YoutubeLink: 'https://youtu.be/sWP0GlWjyek', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.cryptogram.cross.word.puzzle.code', AppMagicLink: 'https://appmagic.rocks/google-play/cryptogram-code-word-puzzle/com.severex.cryptogram.cross.word.puzzle.code', RepositoryLink: '' },
+                { Title: 'Dixie Poker', Description: 'Poker + solitaire combination. Features a customization system, allowing to change the appearance of the game in one click', TimePeriod: 'January 2025', Skills: [], ImageSrc: '/imgs/dixie-poker.jpg', YoutubeLink: 'https://youtu.be/0UGaoi8QMN0', PlayLink: 'https://play.google.com/store/apps/details?id=com.severex.poker.solitaire.classic.cards', AppMagicLink: 'https://appmagic.rocks/google-play/dixie-poker-solitaire-puzzle/com.severex.poker.solitaire.classic.cards', RepositoryLink: '' }
             ]
         },
         {
-            Title: "Butcher's Games", TimePeriod: 'Jun 2024 - Aug 2024', Skills: ['Unity 3D', 'Blender', 'Shader Graph', 'Asset Ripper'],
+            Title: "Butcher's Games", TimePeriod: 'Jun 2024 - Aug 2024', Skills: ['Unity 3D', 'Unity for Web', 'Shaders', 'Mixamo', 'Blender', 'Asset Ripper'],
             Games: [
-                { Title: 'Archery Clash', Description: "Voodoo's game ported for Web", TimePeriod: 'July 2024', Skills: ['Unity 3D', 'Blender', 'Shader Graph', 'Asset Ripper'], ImageSrc: '/imgs/archery_clash.png', YoutubeLink: 'https://youtu.be/gdOqL7gS1Yc', PlayLink: 'https://yandex.ru/games/app/359525?draft=true', AppMagicLink: '', RepositoryLink: '' },
-                { Title: 'Flick Goal', Description: "Voodoo's game ported for Web", TimePeriod: 'June 2024', Skills: ['Unity 3D', 'Blender', 'Shader Graph', 'Asset Ripper'], ImageSrc: '/imgs/flick_goal.png', YoutubeLink: 'https://youtu.be/1WJgf6X2X94', PlayLink: 'https://yandex.ru/games/app/348616?draft=true', AppMagicLink: '', RepositoryLink: '' }
+                { Title: 'Archery Clash', Description: "Voodoo's game ported for Web", TimePeriod: 'July 2024', Skills: [], ImageSrc: '/imgs/archery_clash.png', YoutubeLink: 'https://youtu.be/gdOqL7gS1Yc', PlayLink: 'https://yandex.ru/games/app/359525?draft=true', AppMagicLink: '', RepositoryLink: '' },
+                { Title: 'Flick Goal', Description: "Voodoo's game ported for Web", TimePeriod: 'June 2024', Skills: [], ImageSrc: '/imgs/flick_goal.png', YoutubeLink: 'https://youtu.be/1WJgf6X2X94', PlayLink: 'https://yandex.ru/games/app/348616?draft=true', AppMagicLink: '', RepositoryLink: '' }
             ]
         },
         {
-            Title: 'Panda Play', TimePeriod: 'Jul 2021 - Oct 2023', Skills: ['Unity 3D', 'C#'],
+            Title: 'Panda Play', TimePeriod: 'Jul 2021 - Oct 2023', Skills: ['Unity 3D', 'Cinemachine', 'NavMesh', 'Shaders', 'Water', 'Procedural Generation', 'Enemy AI'],
             Games: [
                 { Title: 'Zombie Bulldozer', Description: 'Player (custom bulldozer controller) is pushing hoards of zombies (navmesh) off of cliffs in realistic graphics', TimePeriod: 'Development period: 2022', Skills: ['Unity 3D', 'C#'], ImageSrc: '/imgs/zombie_bulldozer.png', YoutubeLink: 'https://youtu.be/dQw4w9WgXcQ', PlayLink: 'https://play.google.com/store/apps/details?id=com.me.zombiebulldozer', AppMagicLink: 'https://appmagic.rocks/google-play/buldozer-vs-zombie/com.me.zombiebulldozer', RepositoryLink: '' },
                 { Title: 'Body Maze', Description: 'Joints bazed main character is navigating various levels, solving puzzles', TimePeriod: 'Development period: 2023', Skills: ['Unity 3D', 'C#'], ImageSrc: '/imgs/body_maze.png', YoutubeLink: 'https://youtu.be/G6lJX_mSsrU', PlayLink: 'https://play.google.com/store/apps/details?id=me.bodymaze.puzzle', AppMagicLink: 'https://appmagic.rocks/google-play/body-maze-puzzle/me.bodymaze.puzzle', RepositoryLink: '' },
@@ -35,9 +44,9 @@ const portfolioData = {
             ]
         },
         {
-            Title: 'My Pet Projects', TimePeriod: '', Skills: ['Unity 3D'],
+            Title: 'My Pet Projects', TimePeriod: '', Skills: ['Unity 3D', 'Desktop', 'Networking', 'Procedural Generation', 'Shaders', 'Mesh Generation'],
             Games: [
-                { Title: 'SCP 173: Foundation Escape', Description: 'Stealth-action arcade game. Smart enemies with different behaviours. Multiple characters with unique abilities', TimePeriod: '2025', Skills: ['Unity 3D', 'NavMesh', 'Mesh Generation', 'Shaders'], ImageSrc: '/imgs/scp-173.webp', YoutubeLink: '', PlayLink: 'https://play.google.com/store/apps/details?id=com.ChimericalDream.SCP173Escape', AppMagicLink: 'https://appmagic.rocks/google-play/scp-173-foundation-escape/com.ChimericalDream.SCP173Escape', RepositoryLink: '' },
+                { Title: 'SCP 173: Foundation Escape', Description: 'Stealth-action arcade game. Smart enemies with different behaviours. Multiple characters with unique abilities', TimePeriod: '2025', Skills: ['Unity 3D', 'NavMesh', 'Mesh Generation', 'Shaders'], ImageSrc: '/imgs/scp-173.webp', YoutubeLink: 'https://youtu.be/tfayEyIs7_Y', PlayLink: 'https://play.google.com/store/apps/details?id=com.ChimericalDream.SCP173Escape', AppMagicLink: 'https://appmagic.rocks/google-play/scp-173-foundation-escape/com.ChimericalDream.SCP173Escape', RepositoryLink: '' },
                 { Title: 'Drift Online', Description: 'The first online game i ever made, this is a fun drifting game inspired by Drift Streets Japan', TimePeriod: '2024', Skills: ['Unity 3D', 'Wheel Collider', 'Photon Fusion 1-2'], ImageSrc: '/imgs/drift_online.png', YoutubeLink: '', PlayLink: '', AppMagicLink: '', RepositoryLink: '' },
                 { Title: 'Earthquake Escape', Description: 'Thrilling infinite runner', TimePeriod: '2021', Skills: ['Unity 3D', 'Mixamo', 'Blender 3D', 'Procedural Generation'], ImageSrc: '/imgs/earthquake_escape.png', YoutubeLink: '', PlayLink: 'https://reddycat.itch.io/earthquake-escape', AppMagicLink: '', RepositoryLink: '' }
             ]
