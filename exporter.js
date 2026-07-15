@@ -1,5 +1,5 @@
 (() => {
-    const downloadButton = document.getElementById('downloadPdf');
+    const downloadButtons = document.querySelectorAll('.pdf-download');
     const pageMargin = 18;
     const lineHeight = 5;
 
@@ -33,7 +33,10 @@
         pdf.setFontSize(9.5);
         y = writeText(pdf, game.Description, pageMargin, y + 1, { maxWidth: contentWidth });
 
-        const details = [game.TimePeriod, ...(game.Skills || [])].filter(Boolean).join('  -  ');
+        const details = [
+            game.TimePeriod,
+            (game.Skills || []).join('  -  ')
+        ].filter(Boolean).join('\n');
         if (details) {
             pdf.setTextColor(70, 98, 143);
             y = writeText(pdf, details, pageMargin, y + 1, { maxWidth: contentWidth });
@@ -45,7 +48,7 @@
             ['Play', game.PlayLink],
             ['AppMagic', game.AppMagicLink],
             ['Repository', game.RepositoryLink]
-        ].filter(([, link]) => link).map(([label, link]) => `${label}: ${link}`).join('  |  ');
+        ].filter(([, link]) => link).map(([label, link]) => `${label}: ${link}`).join('\n');
 
         if (links) {
             pdf.setTextColor(20, 80, 145);
@@ -62,9 +65,10 @@
         }
 
         const data = portfolioData;
-        const icon = downloadButton.querySelector('i');
-        downloadButton.disabled = true;
-        icon.className = 'fas fa-spinner fa-spin';
+        downloadButtons.forEach(button => {
+            button.disabled = true;
+            button.querySelector('i').className = 'fas fa-spinner fa-spin';
+        });
 
         try {
             const { jsPDF } = window.jspdf;
@@ -97,7 +101,10 @@
 
                 pdf.setFont('helvetica', 'normal');
                 pdf.setFontSize(10);
-                const companyDetails = [company.TimePeriod, ...(company.Skills || [])].filter(Boolean).join('  -  ');
+                const companyDetails = [
+                    company.TimePeriod,
+                    (company.Skills || []).join('  -  ')
+                ].filter(Boolean).join('\n');
                 if (companyDetails) {
                     pdf.setTextColor(70, 98, 143);
                     y = writeText(pdf, companyDetails, pageMargin, y + 1, { maxWidth: pageWidth - pageMargin * 2 });
@@ -119,17 +126,19 @@
             }
             pdf.save('dmitry-sudarev-portfolio.pdf');
         } finally {
-            downloadButton.disabled = false;
-            icon.className = 'fas fa-file-pdf';
+            downloadButtons.forEach(button => {
+                button.disabled = false;
+                button.querySelector('i').className = 'fas fa-file-pdf';
+            });
         }
     }
 
-    downloadButton.addEventListener('click', () => {
+    downloadButtons.forEach(downloadButton => downloadButton.addEventListener('click', () => {
         try {
             exportPortfolioAsPdf();
         } catch (error) {
             console.error('Unable to export PDF:', error);
             alert('Unable to export the PDF. Please try again.');
         }
-    });
+    }));
 })();
