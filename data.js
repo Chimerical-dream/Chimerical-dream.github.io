@@ -2,8 +2,8 @@ const portfolioData = {
     Skills: [
         'Unity 3D', 'Unity 2D', 'Unity for Web', 'Desktop', 'Android', 'IOS', 
         'C#', 'Software Design Patterns', 'Software Architecture', 
-        'Profilling', 'LOD', 'Batching',
         'UniTask', 'VContainer', 'DoTween', 'Custom Editor Tools',
+        'Profilling', 'LOD', 'Batching',
         'Physics', 'Procedural Generation', 'NavMesh', 'Enemy AI', 'Cinemachine',
         'URP', 'Lighting', 'Mesh Generation', 'Shaders',
         'Blender', 'Mixamo', 'Asset Ripper',

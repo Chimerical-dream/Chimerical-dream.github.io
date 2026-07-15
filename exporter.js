@@ -57,10 +57,11 @@
     }
 
     function exportPortfolioAsPdf() {
-        if (!window.jspdf || !window.portfolioData) {
+        if (!window.jspdf || typeof portfolioData === 'undefined') {
             throw new Error('Portfolio PDF data is unavailable.');
         }
 
+        const data = portfolioData;
         const icon = downloadButton.querySelector('i');
         downloadButton.disabled = true;
         icon.className = 'fas fa-spinner fa-spin';
@@ -82,10 +83,10 @@
 
             pdf.setFont('helvetica', 'normal');
             pdf.setFontSize(10);
-            y = writeText(pdf, `Core skills: ${portfolioData.Skills.join(' - ')}`, pageMargin, y, { maxWidth: pageWidth - pageMargin * 2 });
+            y = writeText(pdf, `Core skills: ${data.Skills.join(' - ')}`, pageMargin, y, { maxWidth: pageWidth - pageMargin * 2 });
             y += 8;
 
-            portfolioData.Companies.forEach(company => {
+            data.Companies.forEach(company => {
                 y = ensureSpace(pdf, y, 17);
                 pdf.setDrawColor(157, 181, 255);
                 pdf.line(pageMargin, y, pageWidth - pageMargin, y);
