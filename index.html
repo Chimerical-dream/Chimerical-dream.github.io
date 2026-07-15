@@ -33,12 +33,15 @@
                     <a href="https://t.me/nthropos" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                     <a href="https://www.linkedin.com/in/dmitry-sudarev-b21614225/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/Chimerical-dream" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <button id="downloadPdf" class="pdf-download" type="button" aria-label="Download portfolio as PDF" title="Download PDF"><i class="fas fa-file-pdf"></i></button>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="exporter.js"></script>
     <script>
         const portfolio = document.getElementById('portfolio');
         const modal = document.getElementById('videoModal');
@@ -117,6 +120,7 @@
 
         if (portfolioData.Skills.length) {
             const skillsSection = createElement('section', 'general-skills-section');
+            skillsSection.append(createElement('h2', 'skills-title', 'Skills'));
             const skillsList = createElement('div', 'tech-list');
             portfolioData.Skills.forEach(skill => skillsList.append(createElement('span', 'tech-tag', skill)));
             skillsSection.append(skillsList);

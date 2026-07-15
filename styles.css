@@ -56,6 +56,15 @@ h1 {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
+.skills-title {
+    margin: 0 0 1rem;
+    color: var(--muted-text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .company-section {
     margin: 4rem 0;
     padding: 2rem;
@@ -260,8 +269,27 @@ footer {
     transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
+.social-icons a:hover,
+.pdf-download:hover {
     color: var(--secondary-color);
+}
+
+.pdf-download {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: transparent;
+    font-size: 1.5rem;
+    line-height: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pdf-download:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .game-links {
@@ -419,8 +447,13 @@ footer {
         gap: 1rem;
     }
     .game-link {
-        width: 100%;
+        width: fit-content;
         justify-content: center;
+    }
+    .youtube-link {
+        width: 40px;
+        flex: 0 0 40px;
+        align-self: flex-start;
     }
     .modal-content {
         width: 95%;
